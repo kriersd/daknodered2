@@ -1,0 +1,15 @@
+# **** Dave's Notes S **************************************************************************************
+
+# Build the image
+docker build . --tag davekrier/daknodered2:v1
+
+** Run the newly created container as a docker image.
+docker run -it -p 1880:1880 --name daknodered2 davekrier/daknodered2:v1
+
+# ** Now you can do START and STOP
+
+docker start daknodered2
+
+docker stop daknodered2
+
+# **** Dave's Notes E **************************************************************************************

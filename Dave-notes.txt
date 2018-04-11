@@ -1,6 +1,7 @@
-# **** Dave's Notes S **************************************************************************************
+# **** Dave's Notes **************************************************************************************
 
-# Build the image
+# Build the image locally. 
+# Navigate to the directory cloned directory using a terminal window and run this command. 
 docker build . --tag davekrier/daknodered2:v1
 
 ** Run the newly created container as a docker image.
@@ -12,4 +13,9 @@ docker start daknodered2
 
 docker stop daknodered2
 
-# **** Dave's Notes E **************************************************************************************
+# ** I created a Kubernetes Deployment YAML file that will be used to do the deployment on  ICP 
+# Navigate to the directory cloned directory using a terminal window and run this command. 
+
+kubectl create -f ./kube_deployment.yaml
+
+**************************************************************************************

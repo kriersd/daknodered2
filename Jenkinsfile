@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("davekrier/daknodered2")
+        app = docker.build("kriersd/daknodered2")
     }
 
     stage('Test image') {

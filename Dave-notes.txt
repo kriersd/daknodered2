@@ -18,4 +18,43 @@ docker stop daknodered2
 
 kubectl create -f ./kube_deployment.yaml
 
+
+
+## Deploying on Kubernetes Cluster in Public Cloud ###
+
+# - Provision a Kubernetes Cluster and follow the instructions to configure the bx cli
+# - Once your able to connect with the kubectl command and get the nodes your ready to go. 
+# - Its all very well documented on the Cloud Public console under your Container Service. 
+
+# - Run the kubectl command to do the deployment just like you did for ICP. 
+
+# - Navigate to the directory cloned directory using a terminal window and run this command. 
+
+kubectl create -f ./kube_deployment.yaml
+
+# - You should see a message that says your deployment was successful. 
+# - deployment "daknodered2-app" created
+# - service "daknodered2-app" created
+
+# - You now need to get the URL (Ingress subdomain) to your cluster, so that you can log into your newly deploy application. Log into your IBM Cloud Public dashboard and take a look at the console for your Kubernetes cluster deployment. On that page you will find your URL. It will be called this: 
+
+# - Ingress subdomain    <clustername-nnnnnn>.us-south.containers.mybluemix.net
+
+# - That will be the URL domain for all deployed applications that are exposed to the internet. 
+
+# - We also need to find the PORT that your application is exposed on. You will need to log back into your Kubernetes console and navigate to the Services section
+
+# - Look for your service name, which was described as the NodePort in the deployment YAML. In our case here we used the service name: daknodered2-app. 
+
+# - You will see that there are two Internal Endpoints configured for the NodePort. The first one is the INTERNAL TARGET port, which is what your application is running on INSIDE the container. The second one is the EXTERNAL facing port, which is accessible from outside your container. The second one is the one you want to use. 
+
+Internal endpoints:  daknodered2-app:1880 TCP
+                     daknodered2-app:31433 TCP
+
+# - Now that you know the Ingress URL and the port number for your application you can use that to access your application. 
+
+http://<clustername-nnnnnn>.us-south.containers.mybluemix.net:31433
+
+# - Using that URL you should see your Node-Red Application running. 
+
 **************************************************************************************

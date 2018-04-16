@@ -16,6 +16,11 @@ docker start daknodered2
 
 docker stop daknodered2
 
+# Once you got it exactly how you want it. PUSH it to Docker hub. 
+ docker push daknodered2 davekrier/daknodered2
+
+# Now the image is available to everyone.. 
+
 # ** I created a Kubernetes Deployment YAML file that will be used to do the deployment on  ICP 
 # Navigate to the directory cloned directory using a terminal window and run this command. 
 

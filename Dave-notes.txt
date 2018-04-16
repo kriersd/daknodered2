@@ -1,5 +1,8 @@
 # **** Dave's Notes **************************************************************************************
 
+# Git Hub Repository - Download the code here. 
+https://github.com/kriersd/daknodered2
+
 # Build the image locally. 
 # Navigate to the directory cloned directory using a terminal window and run this command. 
 docker build . --tag davekrier/daknodered2:v1
